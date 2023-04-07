@@ -17,9 +17,9 @@ public class MemberService {
         this.memberRepository = memberRepository;
     }
 
-    /*
-        회원 가입
-        */
+    /**
+     * 회원가입
+     */
     public Long join(Member member) {
         //중복 회원 X
         validateDuplicateMember(member); //중복 회원 검증
@@ -27,8 +27,8 @@ public class MemberService {
         return member.getId();
     }
 
-    /*
-    전체 회원 조회
+    /**
+     * 전체 회원 조회
      */
     private void validateDuplicateMember(Member member) {
         memberRepository.findByName(member.getName())
