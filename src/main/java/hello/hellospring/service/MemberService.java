@@ -36,9 +36,6 @@ public class MemberService {
         }
     }
 
-    /**
-     * 전체 회원 조회
-     */
     private void validateDuplicateMember(Member member) {
         memberRepository.findByName(member.getName())
                 .ifPresent(m -> {
@@ -46,6 +43,9 @@ public class MemberService {
                 });
     }
 
+    /**
+     * 전체 회원 조회
+     */
     public List<Member> findMembers() {
         return memberRepository.findAll();
     }
