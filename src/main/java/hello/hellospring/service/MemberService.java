@@ -25,7 +25,6 @@ public class MemberService {
         long start = System.currentTimeMillis();
 
         try {
-            //중복 회원 X
             validateDuplicateMember(member); //중복 회원 검증
             memberRepository.save(member);
             return member.getId();
